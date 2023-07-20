@@ -8,3 +8,8 @@ controllers/ authController.js --> controller like signup, signin, login, logout
 
 routes/ authRoute.js --> It imports controller and make get, post request.
 
+Middleware/ jwtAuth.js --> import jsonwebtoken and find id and email from token.
+
+Models/ userSchema.js --> Schema of user like name, email, password with the help of mongoose.
+
+config/ db.js -->  using mongodb database with the help of mongoose.
