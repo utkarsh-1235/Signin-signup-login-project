@@ -74,7 +74,7 @@ const bcrypt = require('bcrypt')
        if(!email || !password){
          return res.status(400).json({
             success:false,
-            message:"Every field is mandatory"
+            message:"email and password are required"
          })
        }
 
@@ -87,9 +87,9 @@ const bcrypt = require('bcrypt')
          
      //  If user not exist and password not matches to actual password then show error
    
-        if(!user || await bcrypt.compare(password, user.password )){
+        if(!user || !await bcrypt.compare(password, user.password )){
               return res.status(400).json({
-                 success:false,
+                 success:true,
                  message:"invalid credentials"
               })
         }
